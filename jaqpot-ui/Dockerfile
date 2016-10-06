@@ -2,7 +2,7 @@ FROM python:2
 MAINTAINER Charalampos Chomenidis <hampos@me.com>
 
 RUN pip install --upgrade pip
-RUN pip install django==1.7
+RUN pip install django==1.8.3
 RUN pip install django-endless-pagination
 RUN pip install django-simple-captcha
 RUN pip install django-ratings
@@ -14,6 +14,8 @@ RUN pip install elasticsearch
 RUN pip install pathlib
 RUN pip install wget
 RUN pip install importlib
+RUN pip install sortedcontainers
+#RUN pip install pattern
 
 # Expose the ports we're interested in
 EXPOSE 8000

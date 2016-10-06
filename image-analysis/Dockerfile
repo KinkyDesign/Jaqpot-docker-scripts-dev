@@ -1,4 +1,4 @@
-FROM jboss/base-jdk:7
+FROM jboss/base-jdk:8
 MAINTAINER Charalampos Chomenidis <hampos@me.com>
 
 # Set the WILDFLY_VERSION env variable
@@ -10,6 +10,9 @@ RUN cd $HOME && curl http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-
 
 USER root
 
+#ADD ./scripts/fastestmirror.conf /etc/yum/pluginconf.d/fastestmirror.conf
+
+#RUN yum clean all && yum swap fakesystemd systemd
 RUN yum install -y xorg-x11-server-Xvfb
 #RUN Xvfb :0 -screen 0 800x600x16 
 
